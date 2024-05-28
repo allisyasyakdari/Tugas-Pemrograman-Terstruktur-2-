@@ -11,3 +11,10 @@ int main(){
 using namespace std;
 int main(){
 }
+
+\\evaluatePostfix
+
+#include <iostream>
+using namespace std;
+int main(){
+}
