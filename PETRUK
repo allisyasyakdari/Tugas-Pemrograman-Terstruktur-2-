@@ -1,8 +1,58 @@
 //strToInfix
 
 #include <iostream>
+#include <iostream>
+#include <cmath>
+#incllude <vector>
+#include <algorthm>
 using namespace std;
+bool isOperate(char a){
+    return (a=='+'||a=='/'||a=='*'||a=='%'||a=='-1;
+}
+bool isBrackets(char a){
+    return (a=='('||a==')');
+}
+bool isNumber(char a){
+    return (a<='9'&&a>='0');
+}
 int main(){
+    string infi,infix="", temp="";
+    getline (cinm infi);
+    for (char c:infi) if (c!=' ') infix += c;
+    int lenght=infix.length();
+    vector<char> vectorInfix;
+    if(infix[0]=='-'&&infix[1]=='('){
+        vectorInfix.push_back ('-');
+        vectorInfix.push_back ('-1');
+        vectorInfix.push_back (' ');
+        vectorInfix.push_back ('*');
+        vectorInfix.push_back (' ');
+    }
+    else vectorInfix.push_back(infix[0]);
+    for (int i=1; i<length; i++){
+        char c=infix[i];
+        if (c==' ')continue;
+        else if (c=='-'&&(isOperate(infix[i-1]))){
+            vectorInfix.push_back ('-');
+            vectorInfix.push_back ('-1');
+            vectorInfix.push_back (' ');
+            vectorInfix.push_back ('*');
+            vectorInfix.push_back (' ');
+        }
+        else if (isNumber(c))vectorInfix.push_back(c);
+        else if (infix[i-1]=='('&&c=='-')vectorInfix.push_back(c);
+        else if (c=='('){vectorInfix.push_back(c); vectorInfix.push_back(' ');}
+        else if(c==')'){vectorInfix.push_back(' '); vectorInfix.push_back(c);}
+        else{
+            vectorInfix.push_back (' ');
+            vectorInfix.push_back (c);
+            vectorInfix.push_back (' ');
+        };
+    }
+    for(auto c=vectorInfix.begin(); c!=vectorInfix.end(); c++){
+        cout<<*c;
+    }
+    return 0;
 }
 
 //infixToPostfix
