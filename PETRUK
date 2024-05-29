@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cmath>
-#incllude <vector>
+#include <vector>
 #include <algorthm>
 using namespace std;
 bool isOperate(char a){
@@ -17,7 +17,7 @@ bool isNumber(char a){
 }
 int main(){
     string infi,infix="", temp="";
-    getline (cinm infi);
+    getline (cin, infi);
     for (char c:infi) if (c!=' ') infix += c;
     int lenght=infix.length();
     vector<char> vectorInfix;
